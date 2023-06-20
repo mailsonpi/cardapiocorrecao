@@ -2,7 +2,7 @@ let menuJson = [
     {id:1, name:'REFRIGERANTE GUARANA R$ 9,90', img:'guarana.jpg', price:[9.90, 9.90, 9.90], sizes:[' ', '',''], description:'pão com gergelim, 2 carnes, alface, tomate e cebola e molho especial'},
     {id:2, name:'COCA COLA R$ 9,90', img:'cocacola.jfif', price:[9.90, 9.90, 9.90], sizes:[' ', '',''], description:'pão com gergelim, carne grelhada, maionese especial, alface, tomate, cebola picles'},
     {id:3, name:'HEINEKEN R$ 12,00', img:'heineken2.png', price:[12.00, 12.00, 12.00], sizes:[' ', '',''], description:'3 Carnes, queijo 3 vezes, pão, molho especial, picles, tomate e cebola '},
-    {id:4, name:'SKOL R$ 8,00', img:'skol.png', price:[8.00, 8.00, 8.00], sizes:[' ', '',''], description:'pão com gergelçim, queijo em dobro, tomate, cebola, alface, picles '},
+    {id:4, name:'SKOL R$ 8,00', img:'skol.png', price:[8.00, 8.00, 8.00], sizes:[' ', '',''], description:'pão com gergelim, queijo em dobro, tomate, cebola, alface, picles '},
     {id:5, name:'STELLA R$ 8,90', img:'image/cheddarduplo.jpeg', price:[8.90, 8.90, 8.90], sizes:[' ', '',''], description:'pão com gergelim, 2 caenes, cheddar em dobro, cebola caramelizada'},
     {id:6, name:'AGUA COM GAS R$ 11,80', img:'image/hfrango.jpeg', price:[11.80, 11.80, 11.80], sizes:[' ', '',''], description:'pão com gergelim, molho especial, chicken empanado, alface, tomate, cebola '},
     {id:7, name:'DRIK DE UVAS R$ 18,90', img:'image/catupiry.jpg', price:[18.90, 18.90, 18.90], sizes:[' ', '',''], description:'pão com gergelim, 4 carnes de hamburguer, catupiry, bacon e molho especial'},

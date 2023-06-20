@@ -353,11 +353,11 @@ button{
   background-color:red;
   color: var(--title-color);
   padding: 1rem 1.75rem;
+  margin-top: 1.5rem; 
   border-radius: .5rem;
   font-weight: var(--font-medium);
   transition: .3s;
 }
-
 .button:hover{
   background-color: red;
 }
