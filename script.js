@@ -3,6 +3,7 @@
 let cart = [];
 let modalQt = 0;
 let key = 0;
+let cartItemsSaved = JSON.parse(window.localStorage.getItem("cart"));
 
 const c = (el)=>document.querySelector(el); 
 const cs = (el)=>document.querySelectorAll(el); 
@@ -88,12 +89,13 @@ c('.menuInfo--addButton').addEventListener('click', ()=>{
     if(locaId > -1){
         cart[locaId].qt += modalQt;
     } else {
-        cart.push({
+        cart.push(...cartItemsSaved, {
             identifier,
             id:menuJson[key].id,
             size,
             qt:modalQt
         });
+        window.localStorage.setItem("cart", JSON.stringify(cart));
     }
     updateCart();
     closeModal();
@@ -119,6 +121,7 @@ $("#cartFinalizar").click(function(){
 
 
 function updateCart() {
+    window.localStorage.setItem("cart", JSON.stringify(cart));
     c('.menu-openner span').innerHTML = cart.length;
     if(cart.length > 0) {
         c('aside').classList.add('show');
@@ -150,9 +153,13 @@ function updateCart() {
             cartItem.querySelector('.cart--item-qtmenos').addEventListener('click',()=>{
                 if(itemCart.qt > 1) {
                     itemCart.qt--
+                    window.localStorage.setItem("cart", JSON.stringify(cart));
                 } else {
                     cart.splice(index, 1);
+                    cartItemsSaved.splice(index, 1);
                 }
+                console.log("local", cartItemsSaved);
+                console.log("array", cart);
                 updateCart();
             });
             cartItem.querySelector('.cart--item-qtmais').addEventListener('click',()=>{
