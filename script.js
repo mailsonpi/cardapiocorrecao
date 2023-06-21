@@ -5,6 +5,7 @@ let modalQt = 0;
 let key = 0;
 let cartItemsSaved = JSON.parse(window.localStorage.getItem("cart"));
 
+
 const c = (el)=>document.querySelector(el); 
 const cs = (el)=>document.querySelectorAll(el); 
 menuJson.map((item, index)=>{
@@ -114,8 +115,8 @@ c('.menu-closer').addEventListener('click', ()=>{
 
 $("#cartFinalizar").click(function(){
     $(location).attr("href", "https://wa.me/5575991578733?text=. " + encodeURI( "olá, gostaria de fazer um pedido\n" + document.getElementById("cart").innerText.replace(/<br\s*\/?>/, "\n") + document.getElementById("details").textContent + "\n *Campo para endereço de entrega e observações:* \n"))
-
     var pegarTxt = document.getElementById("Total").innerText;
+    window.localStorage.clear();
     
 })
 
@@ -158,8 +159,6 @@ function updateCart() {
                     cart.splice(index, 1);
                     cartItemsSaved.splice(index, 1);
                 }
-                console.log("local", cartItemsSaved);
-                console.log("array", cart);
                 updateCart();
             });
             cartItem.querySelector('.cart--item-qtmais').addEventListener('click',()=>{
