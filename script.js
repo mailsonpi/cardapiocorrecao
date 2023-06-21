@@ -4,7 +4,10 @@ let cart = [];
 let modalQt = 0;
 let key = 0;
 let cartItemsSaved = JSON.parse(window.localStorage.getItem("cart"));
-
+window.addEventListener("load", () => {
+    cart.push(...cartItemsSaved);
+    updateCart();
+});
 
 const c = (el)=>document.querySelector(el); 
 const cs = (el)=>document.querySelectorAll(el); 
@@ -114,17 +117,20 @@ c('.menu-closer').addEventListener('click', ()=>{
 });
 
 $("#cartFinalizar").click(function(){
+    window.localStorage.removeItem("cart");
     $(location).attr("href", "https://wa.me/5575991578733?text=. " + encodeURI( "olá, gostaria de fazer um pedido\n" + document.getElementById("cart").innerText.replace(/<br\s*\/?>/, "\n") + document.getElementById("details").textContent + "\n *Campo para endereço de entrega e observações:* \n"))
-    var pegarTxt = document.getElementById("Total").innerText;
-    window.localStorage.clear();
-    
+    var pegarTxt = document.getElementById("Total").innerText;  
+})
+document.querySelector(".menu-openner").addEventListener('click', () => {
+    c('aside').classList.add('show');
+    console.log("teste")
 })
 
-
 function updateCart() {
+   
     window.localStorage.setItem("cart", JSON.stringify(cart));
     c('.menu-openner span').innerHTML = cart.length;
-    if(cart.length > 0) {
+    if(cartItemsSaved.length > 0) {
         c('aside').classList.add('show');
         c('.cart').innerHTML = ''; 
         let subtotal = 0;
