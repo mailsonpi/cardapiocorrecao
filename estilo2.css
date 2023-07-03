@@ -71,6 +71,9 @@ html {
   font-family: "Luckiest Guy", cursive;
 }
 
+.material-icons.white { color: #FFF; }
+
+
 .preloading span {
   margin: 0;
   font-size: 1em;
@@ -167,8 +170,6 @@ html {
 }
 
 
-
-
 body {
     background-color:#EEE;
     font-family:'Lato',Helvetica,Arial;
@@ -190,8 +191,7 @@ header {
     height:60px;
     background-color:#9b9a922a;
     display:none;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-between;
 }
 
 .menu-openner {
