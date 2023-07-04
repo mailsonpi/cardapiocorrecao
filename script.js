@@ -6,8 +6,6 @@ let key = 0;
 window.addEventListener("load", () => {
     cart.push(...cartItemsSaved || []);
     window.localStorage.setItem("cart", JSON.stringify(cart));
-    console.log("cart", cart);
-    console.log("local", cartItemsSaved);
 }); 
 
 const c = (el)=>document.querySelector(el); 
@@ -100,10 +98,8 @@ c('.menuInfo--addButton').addEventListener('click', ()=>{
             size,
             qt:modalQt
         });
-        console.log("teste");
         window.localStorage.setItem("cart", JSON.stringify(cart));
     }
-    console.log("cart on add", cart);
     updateCart();
     closeModal();
 });
